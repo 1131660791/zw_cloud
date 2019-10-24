@@ -4,13 +4,70 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cloud</groupId>
+    <groupId>com.zw</groupId>
     <artifactId>zw_cloud</artifactId>
+    <!--  父类型都为pom类型 -->
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <!-- 项目版本 -->
+    <version>1.0</version>
+
+    <developers> <!-- 开发者信息 -->
+        <developer>
+            <name>hzw</name>
+            <email>cdpjhzw@foxmail.com</email>
+            <roles>
+                <role>开发者</role>
+            </roles>
+        </developer>
+    </developers>
+
     <modules>
         <module>zw_pojo</module>
+        <module>zw_pom</module>
     </modules>
 
+    <parent> <!-- 引入springboot 启动类 -->
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.9.RELEASE</version>
+        <relativePath/> <!-- 设定一个空值将始终从仓库中获取，不从本地路径获取 -->
+    </parent>
 
+    <properties> <!-- 指定导入jar包版本 -->
+        <junit.version>4.12</junit.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.RELEASE</version>
+                <type>pom</type>
+                <!-- maven不支持多继承，使用import来依赖管理配置 -->
+                <scope>import</scope>
+            </dependency>
+
+            <dependency> <!-- 使用consul 注册服务 -->
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-consul-config</artifactId>
+                <version>2.1.0.RELEASE</version>
+            </dependency>
+
+            <!--druid 数据源 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.1.12</version>
+            </dependency>
+
+            <!-- 引用单元测试类 -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
