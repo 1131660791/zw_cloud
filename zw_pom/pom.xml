@@ -12,31 +12,25 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>zw_pom</artifactId>
 
+    <properties>
+        <server.version>2.1.0.RELEASE</server.version>
+    </properties>
+    <!-- Spring Cloud 版本 -->
+
     <dependencies>
-        <!-- 引用consul 注册中心 -->
+        <!-- 所有服务 引用 consul 为注册中心 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>
-            <version>2.1.0.RELEASE</version>
+            <version>${server.version}</version>
         </dependency>
 
-        <!-- lombok  -->
+        <!-- 所有服务 引用 config 为配置中心 -->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.20</version>
-            <scope>provided</scope>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+            <version>${server.version}</version>
         </dependency>
-
-        <!-- 导入数据库连接 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.13</version>
-        </dependency>
-
 
     </dependencies>
-
-
 </project>

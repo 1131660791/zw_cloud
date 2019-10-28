@@ -25,4 +25,3 @@ mybatis-plus:
 logging:
   level:
     com.baomidou.mybatisplus.samples: debug
-
