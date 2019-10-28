@@ -23,6 +23,13 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- 引入 Config 配置中心 config server 客户端 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
+            <version>2.1.0.RELEASE</version>
+        </dependency>
+
         <!-- lombok  -->
         <dependency>
             <groupId>org.projectlombok</groupId>

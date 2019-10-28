@@ -1,7 +1,6 @@
 server:
   port: 8888
 
-
 spring:
   application:
     name: zw_config_server
@@ -25,9 +24,8 @@ spring:
 #  Spring Cloud Config也提供本地存储配置方式。我们只需要设置属性spring.profiles.active=native，Config Server会默认从应用的src/main/resource目录下检索配置文件。
 #  也可以通过spring.cloud.config.server.native.searchLocations=file:F:/properties/属性来指定配置文件的位置。
     config:
-      profile: dev # 使用环境
       server:
         git:
-          uri: https://github.com/1131660791/zw_config_server.git
+          uri: http://github.com/1131660791/zw_config_server.git
           username: 1131660791
           password: HZWnuli8..
