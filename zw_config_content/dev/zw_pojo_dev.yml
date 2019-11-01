@@ -6,11 +6,6 @@ spring:
     username: root
     password: mysql
 
-# mybatis-plus
-mybatis-plus:
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.pojo.bean
-
 # Logger Config
 logging:
   level:

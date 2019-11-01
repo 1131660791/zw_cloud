@@ -9,6 +9,8 @@ spring:
     consul: # 必须要在 bootstrap.yml里 注入 注册中心
       host: 127.0.0.1
       port: 8500
-      discovery: # 主动读取 config 信息
+      discovery:
+        # 健康检测的url，如果不配置，健康检测一定失败
         health-check-path: ${management.context-path}/health
+        # 健康检测时间间隔
         health-check-interval: 10s
