@@ -1,9 +1,4 @@
 spring:
-  cloud:
-    consul:
-      host: 127.0.0.1
-      port: 8500
-
   # 数据库链接
   datasource:
     driver-class-name: com.p6spy.engine.spy.P6SpyDriver

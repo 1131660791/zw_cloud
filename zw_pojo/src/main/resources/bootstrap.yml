@@ -1,6 +1,14 @@
+server:
+  port: 8083
+
 spring:
+  application:
+    name: zw_pojo
+
   cloud:
-    config:
-      uri: https://127.0.0.1:8888
-      discovery:
-        enabled: true
+    consul: # 必须要在 bootstrap.yml里 注入 注册中心
+      host: 127.0.0.1
+      port: 8500
+      discovery: # 主动读取 config 信息
+        health-check-path: ${management.context-path}/health
+        health-check-interval: 10s

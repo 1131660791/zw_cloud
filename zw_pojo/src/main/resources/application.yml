@@ -1,6 +1,9 @@
-server:
-  port: 8083
-
 spring:
-  application:
-    name: zw_pojo
+  config:
+    uri: http://127.0.0.1:8888
+    name: zw_pojo # 读取 config 文件名称
+    profile: dev  # 读取环境版本
+    label: master # 分支
+    discovery:
+      enabled: true
+      service-id: zw_config_server # config server名称
