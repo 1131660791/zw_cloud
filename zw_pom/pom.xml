@@ -32,6 +32,13 @@
             <version>${server.version}</version>
         </dependency>
 
+        <!-- 加入健康检查 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${server.version}</version>
+        </dependency>
+
 
     </dependencies>
 </project>

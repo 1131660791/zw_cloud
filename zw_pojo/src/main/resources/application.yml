@@ -1,7 +1,7 @@
 spring:
   config:
     uri: http://127.0.0.1:8888
-    name: zw_pojo # 读取 config 文件名称
+    name: zw_pojo_dev # 读取 config 文件名称
     profile: dev  # 读取环境版本
     label: master # 分支
     discovery:
