@@ -27,5 +27,8 @@ spring:
       server:
         git:
           uri: https://github.com/1131660791/zw_cloud.git
+          username: 1131660791
+          password: HZWnuli8..
           # git仓库地址下的相对地址，可以配置多个，用,分割。
           search-paths: /zw_config_content/dev
+          default-label: master

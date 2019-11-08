@@ -1,16 +1,25 @@
-server:
-  port: 8083
-
 spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
   application:
     name: zw_pojo
-
   cloud:
+    # consul
     consul: # 必须要在 bootstrap.yml里 注入 注册中心
       host: 127.0.0.1
       port: 8500
       discovery:
-        # 健康检测的url，如果不配置，健康检测一定失败
-        health-check-path: ${management.context-path}/health
-        # 健康检测时间间隔
         health-check-interval: 10s
+        health-check-path: /actuator/health
+        heartbeat:
+          enabled: true
+    # config
+    config:
+      uri: http://127.0.0.1:8888
+      discovery:
+        enabled: true
+        service-id: zw_config_server
