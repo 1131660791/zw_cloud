@@ -8,7 +8,8 @@ spring:
     uri: http://127.0.0.1:8888
     discovery:
       enabled: true
-      service-id: zw_config_server
+      service-id: zw-config-server
+
 
 # mybatis-plus
 mybatis-plus:

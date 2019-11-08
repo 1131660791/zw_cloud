@@ -15,5 +15,5 @@ spring:
 ---
 spring:
   application:
-    name: zw_pojo
+    name: zw-pojo
   profiles: dev

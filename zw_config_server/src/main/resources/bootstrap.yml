@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: zw_config_server
+    name: zw-config-server
 
   cloud:
 # Consul 应用
@@ -26,6 +26,7 @@ spring:
     config:
       server:
         git:
+          #uri: https://github.com/1131660791/zw_config_server.git
           uri: https://github.com/1131660791/zw_cloud.git
           username: 1131660791
           password: HZWnuli8..
