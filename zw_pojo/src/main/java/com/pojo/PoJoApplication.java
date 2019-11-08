@@ -9,6 +9,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 public class PoJoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PoJoApplication.class,args);
+        SpringApplication.run(PoJoApplication.class, args);
     }
 }

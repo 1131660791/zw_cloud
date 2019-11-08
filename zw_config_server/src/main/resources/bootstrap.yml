@@ -9,8 +9,8 @@ spring:
 # Consul 应用
     consul:
       host: 127.0.0.1
-# Spring Cloud Config
 
+  # Spring Cloud Config
 #  /{application}/{profile}[/{label}]
 #  /{application}-{profile}.yml
 #  /{label}/{application}-{profile}.yml
@@ -27,7 +27,7 @@ spring:
       server:
         git:
           #uri: https://github.com/1131660791/zw_config_server.git
-          uri: https://github.com/1131660791/zw_cloud.git
+          uri: https://github.com/1131660791/zw_cloud
           username: 1131660791
           password: HZWnuli8..
           # git仓库地址下的相对地址，可以配置多个，用,分割。
