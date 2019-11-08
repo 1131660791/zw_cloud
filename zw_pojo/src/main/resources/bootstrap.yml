@@ -1,12 +1,6 @@
 spring:
   profiles:
     active: dev
-
----
-spring:
-  profiles: dev
-  application:
-    name: zw_pojo
   cloud:
     # consul
     consul: # 必须要在 bootstrap.yml里 注入 注册中心
@@ -17,9 +11,9 @@ spring:
         health-check-path: /actuator/health
         heartbeat:
           enabled: true
-    # config
-    config:
-      uri: http://127.0.0.1:8888
-      discovery:
-        enabled: true
-        service-id: zw_config_server
+
+---
+spring:
+  application:
+    name: zw_pojo
+  profiles: dev
