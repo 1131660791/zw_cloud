@@ -6,10 +6,6 @@ spring:
     name: zw-config-server
 
   cloud:
-# Consul 应用
-    consul:
-      host: 127.0.0.1
-
   # Spring Cloud Config
 #  /{application}/{profile}[/{label}]
 #  /{application}-{profile}.yml
