@@ -1,16 +1,3 @@
-server:
-  port: 8083
-
-
-spring:
-  # config
-  config:
-    uri: http://127.0.0.1:8888
-    discovery:
-      enabled: true
-      service-id: zw-config-server
-
-
 # mybatis-plus
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
