@@ -2,6 +2,7 @@ spring:
   cloud:
     # config
     config:
-      uri: http://127.0.0.1:8888/
-      label: master
-      profile: dev
+      uri: http://127.0.0.1:8888
+      name: zw-pojo   # git上文件名 没有yml
+      profile: dev    # git上文件名后的 环境名
+      label: master   # 远程库的分支名
