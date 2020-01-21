@@ -25,6 +25,7 @@
         <module>zw_pojo</module>
         <module>zw_pom</module>
         <module>zw_config_server</module>
+        <module>zw_gateway</module>
     </modules>
 
     <parent> <!-- 引入springboot 启动类 -->
