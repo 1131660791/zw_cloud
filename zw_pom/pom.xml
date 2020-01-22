@@ -13,7 +13,7 @@
     <artifactId>zw_pom</artifactId>
 
     <properties>
-        <server.version>2.1.0.RELEASE</server.version>
+        <server.version>2.0.2.RELEASE</server.version>
     </properties>
     <!-- Spring Cloud 版本 -->
 
@@ -24,6 +24,21 @@
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>
             <version>${server.version}</version>
         </dependency>
+
+        <!-- 熔断器 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <version>${server.version}</version>
+        </dependency>
+
+        <!-- 权限 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>${server.version}</version>
+        </dependency>
+
 
         <!-- 所有服务 引用 config 为配置中心 -->
         <dependency>
