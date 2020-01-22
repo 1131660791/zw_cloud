@@ -1,6 +1,32 @@
 server:
   port: 8086
 
+
+spring:
+  cloud:
+    consul: # 必须要在 bootstrap.yml里 注入 注册中心
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        health-check-interval: 10s
+        health-check-path: /actuator/health
+        heartbeat:
+          enabled: true
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway=TRACE:
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include=*:
+
+
 #spring:
 #  cloud:
 #    gateway:
