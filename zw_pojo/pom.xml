@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>zw_pojo</artifactId>
+    <packaging>jar</packaging>
 
     <properties>
         <server.version>2.1.0.RELEASE</server.version>
