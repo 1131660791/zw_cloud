@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.pojo.bean.Product;
 import com.pojo.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -22,6 +23,7 @@ import javax.annotation.Resource;
  */
 @Slf4j
 @RestController
+@RefreshScope
 @RequestMapping("/product")
 public class ProductController {
 
