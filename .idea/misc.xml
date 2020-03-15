@@ -13,6 +13,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/zw_commons/pom.xml" />
+        <option value="$PROJECT_DIR$/zw_pojo/pom.xml" />
       </set>
     </option>
   </component>

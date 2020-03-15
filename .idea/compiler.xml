@@ -6,8 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="zw_pojo" />
+        <module name="zw_provider" />
+        <module name="commons_elasticsearch" />
+        <module name="provider_common" />
+        <module name="provider_feign" />
+        <module name="consumer_common" />
+        <module name="consumer_api" />
+        <module name="commons_redis" />
         <module name="zw_config_server" />
+        <module name="provider_api" />
+        <module name="consumer_feign" />
         <module name="zw_gateway" />
         <module name="commons_ribbitmq" />
       </profile>
@@ -15,17 +23,29 @@
     <bytecodeTargetLevel>
       <module name="zw_commons" target="1.8" />
       <module name="zw_commons (1)" target="1.8" />
+      <module name="zw_pojo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="commons_elasticsearch" options="-parameters" />
+      <module name="commons_redis" options="-parameters" />
       <module name="commons_ribbitmq" options="-parameters" />
+      <module name="consumer_api" options="-parameters" />
+      <module name="consumer_common" options="-parameters" />
+      <module name="consumer_feign" options="-parameters" />
+      <module name="provider_api" options="-parameters" />
+      <module name="provider_common" options="-parameters" />
+      <module name="provider_feign" options="-parameters" />
+      <module name="zw_business" options="-parameters" />
       <module name="zw_commons" options="-parameters" />
       <module name="zw_commons (1)" options="-parameters" />
       <module name="zw_config_server" options="-parameters" />
+      <module name="zw_consumer" options="-parameters" />
       <module name="zw_gateway" options="-parameters" />
       <module name="zw_pojo" options="-parameters" />
       <module name="zw_pom" options="-parameters" />
+      <module name="zw_provider" options="-parameters" />
     </option>
   </component>
 </project>

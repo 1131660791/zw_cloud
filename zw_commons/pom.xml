@@ -13,7 +13,9 @@
     <description>公共模块</description>
 
     <modules>
+        <module>commons_redis</module>
         <module>commons_ribbitmq</module>
+        <module>commons_elasticsearch</module>
     </modules>
 
     <!-- 公共模块引入管理 -->
@@ -24,7 +26,16 @@
                 <artifactId>commons_ribbitmq</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
+            <dependency> <!-- redis -->
+                <groupId>com.zw</groupId>
+                <artifactId>commons_redis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency> <!-- elasticsearch -->
+                <groupId>com.zw</groupId>
+                <artifactId>commons_elasticsearch</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
