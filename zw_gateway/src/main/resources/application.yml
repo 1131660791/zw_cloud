@@ -30,7 +30,7 @@ management:
 #spring:
 #  cloud:
 #    gateway:
-#      routes: # 路由是gateway的基本构建模块。它由ID、目ta标URI、断言集合和过滤器集合组成。如果聚合断言结果为真，则匹配到该路由。
+#      routes: # 路由是gateway的基本构建模块。它由ID、目标URI、断言集合和过滤器集合组成。如果聚合断言结果为真，则匹配到该路由。
 #        id: baidu
 #        url: http://www.baidu.com
 #        predicates: # 断言集合
