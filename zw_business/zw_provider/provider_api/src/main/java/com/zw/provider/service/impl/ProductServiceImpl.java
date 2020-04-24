@@ -23,7 +23,6 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     @Autowired
     private ProductMapper productMapper;
 
-    @Override
     public IPage<Product> findProduct(Page page) {
         IPage<Product> products = productMapper.findProductPage(page,new Product());
         return products;

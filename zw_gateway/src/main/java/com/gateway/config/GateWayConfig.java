@@ -35,8 +35,7 @@ public class GateWayConfig {
                 .route("host_route", r -> r.host("*.myhost.org")
                         .uri("http://httpbin.org"))
                 .route("rewrite_route", r -> r.host("*.rewrite.org")
-                        .filters(f -> f.rewritePath("/foo/(?<segment>.*)",
-                                "/${segment}"))
+                        .filters(f -> f.rewritePath("/foo/(?<segment>.*)","/${segment}"))
                         .uri("http://httpbin.org"))
                 .route("hystrix_route", r -> r.host("*.hystrix.org")
                         .filters(f -> f.hystrix(c -> c.setName("slowcmd")))
@@ -51,7 +50,6 @@ public class GateWayConfig {
                 .route("websocket_route", r -> r.path("/echo")
                         .uri("ws://localhost:9000"))
                 .build();
-        //@formatter:on
     }
 
     @Bean

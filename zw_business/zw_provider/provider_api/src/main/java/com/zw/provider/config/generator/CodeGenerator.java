@@ -23,7 +23,7 @@ public class CodeGenerator {
         GlobalConfig gc = new GlobalConfig();
         //  String projectPath = System.getProperty("user.dir");
         // 配置路径
-        String projectPath = "D:\\JavaSpace\\IdeaSpace\\zw_cloud\\zw_pojo";
+        final String  projectPath = "D:\\JavaSpace\\IdeaSpace\\zw_cloud\\zw_pojo";
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setFileOverride(true);
         gc.setActiveRecord(true);
@@ -67,7 +67,7 @@ public class CodeGenerator {
                 // to do nothing
             }
         };
-        List<FileOutConfig> focList = new ArrayList<>();
+        List<FileOutConfig> focList = new ArrayList();
         focList.add(new FileOutConfig("/templates/generator/mapper.xml.vm") {
             @Override
             public String outputFile(TableInfo tableInfo) {
