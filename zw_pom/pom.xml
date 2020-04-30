@@ -12,11 +12,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>zw_pom</artifactId>
 
-    <properties>
-        <server.version>2.0.2.RELEASE</server.version>
-    </properties>
     <!-- Spring Cloud 版本 -->
-
     <dependencies>
         <!-- 所有服务 引用 consul 为注册中心 -->
         <dependency>
@@ -32,23 +28,9 @@
             <version>${server.version}</version>
         </dependency>
 
-        <!-- 权限 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-            <version>${server.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
-            <version>${server.version}</version>
-        </dependency>
-
-        <!-- redis -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
             <version>${server.version}</version>
         </dependency>
 
@@ -65,7 +47,5 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
             <version>${server.version}</version>
         </dependency>
-
-
     </dependencies>
 </project>
