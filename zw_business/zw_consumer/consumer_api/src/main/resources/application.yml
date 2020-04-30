@@ -1,0 +1,13 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: zw-consumer
+
+#  添加配置，配置暴露 endpoints：
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # include: "*" 表示暴露所有 endpoints 出去，默认是“health”，“info”

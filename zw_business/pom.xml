@@ -17,5 +17,12 @@
         <module>zw_base</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.zw</groupId>
+            <artifactId>zw_pom</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
