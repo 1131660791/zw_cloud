@@ -8,6 +8,7 @@ import reactor.core.publisher.Mono;
 
 
 /**
+ * 全局过滤器  - order 数值越小约先执行
  * 当请求进入（并与路由匹配）时，筛选Web Handler 会将GlobalFilter的所有实例和所有的GatewayFilter路由特定实例添加到 filter chain。
  * filter组合的排序由org.springframework.core.Ordered接口决定，可以通过实现getOrde()方法或使用@Order注释来设置。
  * 由于Spring Cloud Gateway将用于执行过滤器逻辑区分为“前置”和“后置”阶段，具有最高优先级的过滤器将是“前置”阶段的第一个，而“后置”阶段的最后一个。

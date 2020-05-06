@@ -11,12 +11,18 @@
 
     <artifactId>zw_gateway</artifactId>
 
-
     <dependencies>
         <dependency>
             <groupId>com.zw</groupId>
             <artifactId>zw_pom</artifactId>
-            <version>1.0</version>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- 权限 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>${server.version}</version>
         </dependency>
 
         <dependency>
