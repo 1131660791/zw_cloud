@@ -6,6 +6,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
+import org.springframework.security.web.server.authentication.RedirectServerAuthenticationEntryPoint;
 
 /**
  * gateWay整合Security
@@ -14,21 +15,20 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 @EnableWebFluxSecurity
 public class WebSecurityConfig {
 
-    //security的鉴权排除的url列表
+    // security的鉴权排除的url列表
     private static final String[] excludedAuthPages = {
-            "/auth/login",
-            "/auth/logout",
-            "/health",
-            "/api/socket/**"
+            "/auth/login","/auth/logout","/health","/api/socket/**"
     };
 
     @Bean
     public SecurityWebFilterChain webFluxSecurityFilterChain(ServerHttpSecurity http) throws Exception {
         http
+                .formLogin().loginPage("/xinyue-server-a/account/authen").authenticationEntryPoint(new RedirectServerAuthenticationEntryPoint("/xinyue-server-a/account/index")) // 自定义登录页面
+                .and()
                 .authorizeExchange()
                 .pathMatchers(excludedAuthPages).permitAll()  //无需进行权限过滤的请求路径
                 .pathMatchers(HttpMethod.OPTIONS).permitAll() //option 请求默认放行
-                .anyExchange().authenticated()
+                .anyExchange().authenticated()  // 其它请求都必须是认证（登陆成功）之后才可以访问。
                 .and()
                 .httpBasic()
                 .and()
