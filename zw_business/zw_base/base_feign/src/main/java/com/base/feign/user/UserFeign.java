@@ -1,12 +1,13 @@
 package com.base.feign.user;
 
+import com.base.hystrix.user.UserFeignHystrix;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@FeignClient(value = "user",fallbackFactory = Object.class)
+@FeignClient(name = "user",fallbackFactory = UserFeignHystrix.class)
 public interface UserFeign {
 
-    @RequestMapping(value = "")
+    @RequestMapping(value = "getUser")
     void getUser();
 
 }
