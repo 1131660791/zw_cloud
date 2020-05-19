@@ -14,13 +14,7 @@
         <dependency>
             <groupId>com.zw</groupId>
             <artifactId>base_feign</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.zw</groupId>
-            <artifactId>base_feign</artifactId>
-            <version>1.0</version>
+            <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
