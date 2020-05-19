@@ -17,6 +17,10 @@
         <module>zw_base</module>
     </modules>
 
+    <properties>
+        <swagger.version>2.9.2</swagger.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.zw</groupId>
@@ -28,6 +32,17 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
             <version>${server.version}</version>
+        </dependency>
+        <!-- swagger 文档 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
         </dependency>
     </dependencies>
 

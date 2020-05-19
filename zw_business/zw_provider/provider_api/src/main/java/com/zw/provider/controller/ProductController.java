@@ -56,13 +56,10 @@ public class ProductController {
             e.printStackTrace();
             log.error(e.getMessage());
         }
-
     }
 
     @RequestMapping(value = "pushTemplate")
     public void pushTemplate(){
 
     }
-
 }
-

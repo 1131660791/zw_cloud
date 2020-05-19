@@ -11,5 +11,12 @@
 
     <artifactId>consumer_feign</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-openfeign-core</artifactId>
+            <version>2.1.2.RELEASE</version>
+        </dependency>
+    </dependencies>
 
 </project>
