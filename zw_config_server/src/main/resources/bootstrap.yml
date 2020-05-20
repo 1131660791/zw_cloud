@@ -1,5 +1,3 @@
-spring:
-  cloud:
   # Spring Cloud Config 访问方式
 #  / { 应用名 } / { 环境名 } [ / { 分支名 } ]
 #  / { 应用名 } - { 环境名 }.yml
@@ -9,9 +7,3 @@ spring:
 
 #  Spring Cloud Config也提供本地存储配置方式。我们只需要设置属性spring.profiles.active=native，Config Server会默认从应用的src/main/resource目录下检索配置文件。
 #  也可以通过spring.cloud.config.server.native.searchLocations=file:F:/properties/属性来指定配置文件的位置。
-    config:
-      server:
-        git:
-          uri: https://github.com/1131660791/zw_cloud.git
-          # 搜索 uri 下面的目录
-          search-paths: zw_config_content/dev

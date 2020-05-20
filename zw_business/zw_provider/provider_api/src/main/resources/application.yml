@@ -4,6 +4,13 @@ server:
 spring:
   application:
     name: zw-provider
+  cloud:
+    # config
+    config:
+      uri: http://127.0.0.1:8888
+      name: zw-cloud   # git上文件名 没有yml
+      profile: dev    # git上文件名后的 环境名
+      label: master   # 远程库的分支名
 
 # mybatis-plus
 mybatis-plus:
