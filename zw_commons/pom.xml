@@ -17,6 +17,7 @@
         <module>commons_ribbitmq</module>
         <module>commons_elasticsearch</module>
         <module>commons_util</module>
+        <module>commons_generator</module>
     </modules>
 
     <!-- 公共模块引入管理 -->
@@ -40,6 +41,11 @@
             <dependency>
                 <groupId>com.zw</groupId>
                 <artifactId>commons_util</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zw</groupId>
+                <artifactId>commons_generator</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

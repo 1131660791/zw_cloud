@@ -33,7 +33,6 @@ public class CodeGenerator {
         gc.setOpen(false);
         gc.setAuthor("hzw");
 
-
         // 自定义文件命名，注意 %s 会自动填充表实体属性！
         gc.setMapperName("%sMapper");
         gc.setXmlName("%sMapper");

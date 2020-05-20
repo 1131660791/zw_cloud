@@ -17,5 +17,25 @@
         <module>provider_feign</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.zw</groupId>
+            <artifactId>commons_util</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
+        <!-- 读取配置文件客户端依赖 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
+            <version>${server.version}</version>
+        </dependency>
+
+        <!-- openfeign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>${server.version}</version>
+        </dependency>
+    </dependencies>
 </project>

@@ -1,28 +1,21 @@
 package com.consumer.api.controller;
 
-import com.base.feign.user.UserFeign;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import org.springframework.stereotype.Controller;
 
 /**
- * 消费者 - 控制层
+ * <p>
+ *  前端控制器
+ * </p>
+ *
+ * @author hzw
+ * @since 2020-05-20
  */
-@RestController
-@RequestMapping("/consumerController")
+@Controller
+@RequestMapping("/consumer")
 public class ConsumerController {
 
-    @Autowired
-    private UserFeign userFeign;
-
-
-    /**
-     * 使用feign 调用
-     * @return
-     */
-    @RequestMapping(value = "/getUser")
-    public String oa() {
-        String user = userFeign.getUser();
-        return user;
-    }
 }
+
