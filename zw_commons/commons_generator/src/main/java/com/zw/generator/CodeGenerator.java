@@ -1,4 +1,4 @@
-package com.zw.provider.config.generator;
+package com.zw.generator;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
@@ -23,7 +23,7 @@ public class CodeGenerator {
         GlobalConfig gc = new GlobalConfig();
         //  String projectPath = System.getProperty("user.dir");
         // 配置路径
-        final String  projectPath = "D:\\JavaSpace\\IdeaSpace\\zw_cloud\\zw_pojo";
+        String projectPath = "E:\\JAVA\\ideaSpase\\zw_cloud\\zw_business\\zw_consumer\\consumer_api";
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setFileOverride(true);
         gc.setActiveRecord(true);
@@ -54,9 +54,9 @@ public class CodeGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.pojo");
+        pc.setParent("com.consumer.api");
         pc.setController("controller");
-        pc.setEntity("bean");
+        pc.setEntity("pojo");
         // pc.setModuleName("test");
         mpg.setPackageInfo(pc);
 
@@ -67,7 +67,7 @@ public class CodeGenerator {
                 // to do nothing
             }
         };
-        List<FileOutConfig> focList = new ArrayList();
+        List<FileOutConfig> focList = new ArrayList<>();
         focList.add(new FileOutConfig("/templates/generator/mapper.xml.vm") {
             @Override
             public String outputFile(TableInfo tableInfo) {
@@ -86,7 +86,7 @@ public class CodeGenerator {
         // 表名生成策略 - 默认驼峰法
         strategy.setNaming(NamingStrategy.underline_to_camel);
         // 需要生成的表
-        strategy.setInclude(new String[]{"product"});
+        strategy.setInclude(new String[]{"consumer"});
 
         // 排除生成的表
         //strategy.setExclude(new String[]{"test"});
