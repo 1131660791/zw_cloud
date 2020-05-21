@@ -1,9 +1,9 @@
 package com.consumer.api.service.impl;
 
-import com.consumer.api.pojo.Consumer;
-import com.consumer.api.mapper.ConsumerMapper;
-import com.consumer.api.service.ConsumerService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.consumer.api.mapper.ConsumerMapper;
+import com.consumer.api.pojo.Consumer;
+import com.consumer.api.service.ConsumerService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  * @author hzw
  * @since 2020-05-20
  */
-@Service
+@Service("consumerService")
 public class ConsumerServiceImpl extends ServiceImpl<ConsumerMapper, Consumer> implements ConsumerService {
 
 }
