@@ -100,7 +100,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
                     String pinyin = PinyinHelper.toHanyuPinyinStringArray(chars[idx], formatter)[0];
                     pinyinBuilder.append(firstCharOnly ? pinyin.charAt(0) : pinyin);
                 } catch (Exception ex) {
-                    ex.getMessage();
+                    log.warn(ex.getMessage());
                 }
             } else {
                 pinyinBuilder.append(chars[idx]);
@@ -130,7 +130,6 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
         if (original.length % 2 == 1) {
             changed[original.length - 1] = original[original.length - 1];
         }
-
         return new String(changed);
     }
 }
