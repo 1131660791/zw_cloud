@@ -1,15 +1,12 @@
 package com.gateway.config;
 
-import org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.core.userdetails.MapReactiveUserDetailsService;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Configuration
@@ -30,7 +27,9 @@ public class GateWayConfig {
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("base_route", r -> r.path("/base/{segment}")
-                        .uri("http://localhost:8081"))
+                        .uri("http://localhost:8081")
+                ).route("consumer_route", r -> r.path("/consumer/{segment}")
+                        .uri("http://localhost:8082"))
 //                .route("host_route", r -> r.host("*.myhost.org")
 //                        .uri("http://httpbin.org"))
 //                .route("rewrite_route", r -> r.host("*.rewrite.org")
@@ -55,7 +54,6 @@ public class GateWayConfig {
 //    RedisRateLimiter redisRateLimiter() {
 //        return new RedisRateLimiter(1, 2);
 //    }
-
 
 
     @Bean

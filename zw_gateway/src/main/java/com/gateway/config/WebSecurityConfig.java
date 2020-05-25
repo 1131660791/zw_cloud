@@ -17,13 +17,14 @@ public class WebSecurityConfig {
 
     // security的鉴权排除的url列表
     private static final String[] excludedAuthPages = {
-            "/auth/login","/auth/logout","/health","/api/socket/**"
+            "/auth/login", "/auth/logout", "/health", "/api/socket/**"
     };
 
     @Bean
     public SecurityWebFilterChain webFluxSecurityFilterChain(ServerHttpSecurity http) throws Exception {
         http
-                .formLogin().loginPage("/xinyue-server-a/account/authen")
+                .formLogin()
+                .loginPage("/xinyue-server-a/account/authen")
                 .authenticationEntryPoint(new RedirectServerAuthenticationEntryPoint("/xinyue-server-a/account/index")) // 自定义登录页面
                 .and()
                 .authorizeExchange()
