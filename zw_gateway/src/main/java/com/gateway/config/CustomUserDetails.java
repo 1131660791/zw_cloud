@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 @Component("customUserDetailsService")
 public class CustomUserDetails implements UserDetailsService {
 
-
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         // 1. 通过请求的用户名去数据库中查询用户信息

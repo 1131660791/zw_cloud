@@ -12,18 +12,10 @@
     <artifactId>zw_config_server</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
         <dependency> <!-- Spring Cloud Config 配置 引用 -服务端 -->
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
             <version>2.1.0.RELEASE</version>
         </dependency>
-
     </dependencies>
-
-
 </project>

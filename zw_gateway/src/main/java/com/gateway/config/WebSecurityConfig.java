@@ -1,40 +1,77 @@
 package com.gateway.config;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
-import org.springframework.security.config.web.server.ServerHttpSecurity;
-import org.springframework.security.web.server.SecurityWebFilterChain;
-import org.springframework.security.web.server.authentication.RedirectServerAuthenticationEntryPoint;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
-/**
- * gateWay整合Security
- * 在webflux环境下要生效必须用注解
- */
-@EnableWebFluxSecurity
-public class WebSecurityConfig {
+@Configuration
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    // security的鉴权排除的url列表
-    private static final String[] excludedAuthPages = {
-            "/auth/login", "/auth/logout", "/health", "/api/socket/**"
-    };
+    @Autowired
+    private CustomUserDetails userService;
+
+
+    /**
+     * 注入用户信息服务
+     *
+     * @return 用户信息服务对象
+     */
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return userService;
+    }
+
+    /**
+     * 全局用户信息
+     *
+     * @param auth 认证管理
+     * @throws Exception 用户认证异常信息
+     */
+    @Autowired
+    public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
+        //auth.jdbcAuthentication().dataSource(dataSource).passwordEncoder(passwordEncoder());
+        auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
+    }
+
+    /**
+     * 认证管理
+     *
+     * @return 认证管理对象
+     * @throws Exception 认证异常信息
+     */
+    @Override
+    @Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+
+    /**
+     * http安全配置
+     *
+     * @param http http安全对象
+     * @throws Exception http安全异常信息
+     */
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests().antMatchers(HttpMethod.OPTIONS).permitAll().anyRequest().authenticated().and()
+                .httpBasic().and().csrf().disable();
+    }
 
     @Bean
-    public SecurityWebFilterChain webFluxSecurityFilterChain(ServerHttpSecurity http) throws Exception {
-        http
-                .formLogin()
-                .loginPage("/xinyue-server-a/account/authen")
-                .authenticationEntryPoint(new RedirectServerAuthenticationEntryPoint("/xinyue-server-a/account/index")) // 自定义登录页面
-                .and()
-                .authorizeExchange()
-                .pathMatchers(excludedAuthPages).permitAll()  // 无需进行权限过滤的请求路径
-                .pathMatchers(HttpMethod.OPTIONS).permitAll() // option 请求默认放行
-                .anyExchange().authenticated()  // 其它请求都必须是认证（登陆成功）之后才可以访问。
-                .and().httpBasic()
-                .and() // 启动页面表单登陆,spring security 内置了一个登陆页面/login
-                .csrf().disable() // 必须支持跨域
-                .logout().disable();
-        return http.build();
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }

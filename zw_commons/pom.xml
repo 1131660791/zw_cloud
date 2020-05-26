@@ -43,11 +43,6 @@
                 <artifactId>commons_util</artifactId>
                 <version>${project.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.zw</groupId>
-                <artifactId>commons_generator</artifactId>
-                <version>${project.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 

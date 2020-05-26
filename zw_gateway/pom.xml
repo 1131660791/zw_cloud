@@ -8,28 +8,61 @@
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>zw_gateway</artifactId>
+
+    <properties>
+        <gateway_version>2.0.0.RELEASE</gateway_version>
+        <jwt_version>0.9.1</jwt_version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.zw</groupId>
-            <artifactId>zw_pom</artifactId>
+            <artifactId>commons_util</artifactId>
             <version>${project.version}</version>
         </dependency>
 
-        <!-- 权限 -->
+        <dependency>
+            <groupId>com.zw</groupId>
+            <artifactId>base_common</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- 权限 start -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
             <version>${server.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+            <version>${server.version}</version>
+        </dependency>
+        <!-- 权限 end -->
 
+        <!-- GateWay start -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
-            <version>2.0.0.RELEASE</version>
+            <version>${server.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-webflux</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+        <!-- GateWay end -->
+
+        <!-- jwt start -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>${jwt_version}</version>
+        </dependency>
+        <!-- jwt end -->
 
         <!-- lombok  -->
         <dependency>
