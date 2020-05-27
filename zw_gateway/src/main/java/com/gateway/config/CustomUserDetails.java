@@ -1,5 +1,6 @@
 package com.gateway.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,13 +11,15 @@ import org.springframework.stereotype.Component;
 /**
  * 定义 UserDetailsService
  */
+@Slf4j
 @Component("customUserDetailsService")
 public class CustomUserDetails implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         // 1. 通过请求的用户名去数据库中查询用户信息
-        if(!"meng".equalsIgnoreCase(userName)) {
+        if (!"meng".equalsIgnoreCase(userName)) {
+            log.info("用户名或密码错误" + userName);
             throw new UsernameNotFoundException("用户名或密码错误");
         }
         // 假设当前这个用户在数据库当中存储的密码是1234

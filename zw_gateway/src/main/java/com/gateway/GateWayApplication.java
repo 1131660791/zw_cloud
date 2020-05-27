@@ -11,7 +11,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * 2，在网关后面专门的认证服务进行登陆信息认证，如果登陆成功，在返回的Header中添加用户认证与授权需要的信息，然后在网关处理再完成认证与授权
  */
 @EnableDiscoveryClient
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
 public class GateWayApplication {
 
     public static void main(String[] args) {

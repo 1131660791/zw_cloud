@@ -84,7 +84,7 @@ public class JwtTokenFilter implements GlobalFilter, Ordered {
                 return chain.filter(exchange.mutate().request(newRequest).build());
                 /*
                 System.out.println(jwt.toString());
-                //RSA公钥验签
+                // RSA公钥验签
                 String jwtData[] =  token.split("\\.");
                 Boolean isSgin = RSAUtil.verify((jwtData[0]+"."+jwtData[1]).getBytes(),jwtData[2]);
                 if(isSgin){

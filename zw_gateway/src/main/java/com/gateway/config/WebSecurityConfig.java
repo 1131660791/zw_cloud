@@ -1,6 +1,5 @@
 package com.gateway.config;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +21,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private CustomUserDetails userService;
-
 
     /**
      * 注入用户信息服务
@@ -52,8 +50,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      * @return 认证管理对象
      * @throws Exception 认证异常信息
      */
-    @Override
     @Bean
+    @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }

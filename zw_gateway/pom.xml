@@ -25,8 +25,7 @@
         <dependency>
             <groupId>com.zw</groupId>
             <artifactId>base_common</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
+            <version>${project.version}</version>
         </dependency>
 
         <!-- 权限 start -->
