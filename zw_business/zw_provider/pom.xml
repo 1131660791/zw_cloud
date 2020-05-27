@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>zw_provider</artifactId>
     <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
     <modules>
         <module>provider_api</module>
         <module>provider_common</module>
