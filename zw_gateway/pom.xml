@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>zw_gateway</artifactId>
-
+    <packaging>pom</packaging>
     <properties>
         <gateway_version>2.0.0.RELEASE</gateway_version>
         <jwt_version>0.9.1</jwt_version>

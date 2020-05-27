@@ -7,23 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="base_api" />
-        <module name="base_common" />
-        <module name="base_feign" />
         <module name="commons_elasticsearch" />
         <module name="commons_generator" />
         <module name="commons_redis" />
         <module name="commons_ribbitmq" />
         <module name="commons_util" />
-        <module name="consumer_api" />
-        <module name="consumer_common" />
-        <module name="consumer_feign" />
-        <module name="provider_api" />
-        <module name="provider_common" />
-        <module name="provider_feign" />
         <module name="zw_config_server" />
-        <module name="zw_gateway" />
-        <module name="zw_provider" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -53,7 +42,7 @@
       <module name="zw_consumer" options="" />
       <module name="zw_gateway" options="-parameters" />
       <module name="zw_pom" options="" />
-      <module name="zw_provider" options="-parameters" />
+      <module name="zw_provider" options="" />
     </option>
   </component>
 </project>
