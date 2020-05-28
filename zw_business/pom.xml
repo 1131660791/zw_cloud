@@ -40,7 +40,7 @@
             <version>${server.version}</version>
         </dependency>
 
-        <!--Bus 与 rabbitMQ依赖
+        <!-- Bus 与 rabbitMQ依赖
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>
@@ -111,5 +111,6 @@
             <version>${swagger.version}</version>
         </dependency>
     </dependencies>
+
 
 </project>

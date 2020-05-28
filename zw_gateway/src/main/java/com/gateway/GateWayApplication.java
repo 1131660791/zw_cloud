@@ -2,7 +2,6 @@ package com.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
@@ -11,7 +10,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * 2，在网关后面专门的认证服务进行登陆信息认证，如果登陆成功，在返回的Header中添加用户认证与授权需要的信息，然后在网关处理再完成认证与授权
  */
 @EnableDiscoveryClient
-@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
+@SpringBootApplication
 public class GateWayApplication {
 
     public static void main(String[] args) {
