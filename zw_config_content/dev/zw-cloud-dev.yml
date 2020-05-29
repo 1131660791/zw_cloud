@@ -13,8 +13,10 @@ spring:
       port: 8500
       discovery:
         register: true
-        health-check-interval: 10s # 配置 Consul 健康检查频率，也就是心跳频率。
-        health-check-path: /actuator/health # 配置 Consul 健康检查地址，Actuator 组件帮我们进行了实现，所以我们不需要额外的实现，地址在服务启动的时候，打印信息里面可以看到。
+        # 配置 Consul 健康检查频率，也就是心跳频率。
+        health-check-interval: 10s
+        # 配置 Consul 健康检查地址，Actuator 组件帮我们进行了实现，所以我们不需要额外的实现，地址在服务启动的时候，打印信息里面可以看到。
+        health-check-path: /actuator/health
         heartbeat:
           enabled: true
 
