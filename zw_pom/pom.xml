@@ -14,13 +14,6 @@
 
     <!-- Spring Cloud 版本 -->
     <dependencies>
-        <!-- 所有服务 引用 consul 为注册中心 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
-            <version>${server.version}</version>
-        </dependency>
-
         <!-- 所有服务 引用 config 为配置中心 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

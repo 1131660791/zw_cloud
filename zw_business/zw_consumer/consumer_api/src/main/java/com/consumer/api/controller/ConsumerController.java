@@ -23,10 +23,14 @@ public class ConsumerController {
     @Resource
     private ConsumerService consumerService;
 
-
     @RequestMapping(value = "/getConsumer")
     public List<Consumer> getConsumer() {
         return consumerService.list();
+    }
+
+    @RequestMapping(value = "/ss")
+    public String ss(){
+       return consumerService.getss();
     }
 
 }

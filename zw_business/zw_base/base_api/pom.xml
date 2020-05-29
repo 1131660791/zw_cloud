@@ -22,8 +22,9 @@
             <artifactId>base_feign</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.zw</groupId>
-            <artifactId>base_feign</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+            <version>${server.version}</version>
         </dependency>
     </dependencies>
 

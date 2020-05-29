@@ -11,6 +11,15 @@
     <packaging>jar</packaging>
     <artifactId>provider_api</artifactId>
 
+    <dependencies>
+        <!-- consul 客户端 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+            <version>${server.version}</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <finalName>${project.name}</finalName>
         <plugins>

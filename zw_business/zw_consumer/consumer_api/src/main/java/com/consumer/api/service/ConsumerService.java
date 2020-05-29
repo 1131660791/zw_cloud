@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ConsumerService extends IService<Consumer> {
 
+    String getss();
 }
