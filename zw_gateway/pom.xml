@@ -26,6 +26,7 @@
             <groupId>com.zw</groupId>
             <artifactId>base_common</artifactId>
             <version>${project.version}</version>
+            <type>jar</type>
         </dependency>
 
         <!-- 权限 start -->
@@ -46,12 +47,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
             <version>${server.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-webflux</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <!-- GateWay end -->
 

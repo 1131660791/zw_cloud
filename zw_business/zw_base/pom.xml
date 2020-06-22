@@ -45,6 +45,7 @@
             <version>${project.version}</version>
         </dependency>
 
+
         <!-- 读取配置文件客户端依赖 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
