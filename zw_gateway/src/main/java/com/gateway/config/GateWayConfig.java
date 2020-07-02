@@ -18,7 +18,8 @@ public class GateWayConfig {
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("base_route", r -> r.path("/base/**")
-                        .uri("http://localhost:8081")
+                         // lb://注册中心服务名
+                        .uri("lb://base")
                 ).route("consumer_route", r -> r.path("/consumer/{segment}")
                         .uri("http://localhost:8082"))
                 .build();
