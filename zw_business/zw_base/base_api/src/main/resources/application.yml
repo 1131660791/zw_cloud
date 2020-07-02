@@ -1,9 +1,10 @@
 server:
   port: 8081
-
+  servlet:
+    context-path: /base
 spring:
   application:
-    name: zw-base
+    name: base
 
   cloud:
     # Spring Cloud Config 访问方式

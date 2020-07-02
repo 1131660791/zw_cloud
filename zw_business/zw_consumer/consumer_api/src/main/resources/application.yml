@@ -1,9 +1,10 @@
 server:
   port: 8082
-
+  servlet:
+    context-path: /consumer
 spring:
   application:
-    name: zw-consumer
+    name: consumer
 
   cloud:
     config:
