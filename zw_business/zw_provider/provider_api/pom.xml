@@ -12,6 +12,11 @@
     <artifactId>provider_api</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${server.version}</version>
+        </dependency>
         <!-- consul 客户端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
