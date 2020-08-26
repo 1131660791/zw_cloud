@@ -20,6 +20,10 @@
         <module>commons_generator</module>
     </modules>
 
+    <properties>
+        <swagger.version>2.9.2</swagger.version>
+    </properties>
+
     <!-- 公共模块引入管理 -->
     <dependencyManagement>
         <dependencies>
@@ -57,6 +61,11 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
         </dependency>
     </dependencies>
 </project>
