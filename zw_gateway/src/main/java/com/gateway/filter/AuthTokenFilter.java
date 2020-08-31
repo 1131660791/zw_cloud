@@ -1,8 +1,12 @@
 package com.gateway.filter;
 
+import com.base.feign.user.UserFeign;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gateway.util.constant.AuthProvider;
 import com.gateway.util.jwt.JwtUtil;
+import com.util.response.Resp;
+import com.util.response.ResultCode;
 import io.jsonwebtoken.Claims;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +22,7 @@ import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import javax.annotation.Resource;
 import java.nio.charset.StandardCharsets;
 
 /**
@@ -27,6 +32,11 @@ import java.nio.charset.StandardCharsets;
 @Component
 @AllArgsConstructor
 public class AuthTokenFilter implements GlobalFilter, Ordered {
+
+    @Resource
+    private UserFeign userFeign;
+
+    private ObjectMapper objectMapper;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -51,6 +61,7 @@ public class AuthTokenFilter implements GlobalFilter, Ordered {
 
     /**
      * 放过验证权限
+     *
      * @param path
      * @return
      */
@@ -58,15 +69,22 @@ public class AuthTokenFilter implements GlobalFilter, Ordered {
         return AuthProvider.getDefaultSkipUrl().stream().map(url -> url.replace(AuthProvider.TARGET, AuthProvider.REPLACEMENT)).anyMatch(path::contains);
     }
 
+    /**
+     * 验证返回
+     *
+     * @param resp
+     * @param msg
+     * @return
+     */
     private Mono<Void> unAuth(ServerHttpResponse resp, String msg) {
         resp.setStatusCode(HttpStatus.UNAUTHORIZED);
         resp.getHeaders().add("Content-Type", "application/json;charset=UTF-8");
         String result = "";
-//        try {
-//            result = objectMapper.writeValueAsString(ResponseProvider.unAuth(msg));
-//        } catch (JsonProcessingException e) {
-//            log.error(e.getMessage(), e);
-//        }
+        try {
+            result = objectMapper.writeValueAsString(Resp.error(ResultCode.DefaultResultCode.NO_PERMISSIONS_EXCEPTION,"没有权限"));
+        } catch (JsonProcessingException e) {
+            log.error(e.getMessage(), e);
+        }
         DataBuffer buffer = resp.bufferFactory().wrap(result.getBytes(StandardCharsets.UTF_8));
         return resp.writeWith(Flux.just(buffer));
     }
