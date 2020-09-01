@@ -1,12 +1,10 @@
 package com.gateway.filter;
 
-import com.base.feign.user.UserFeign;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gateway.util.constant.AuthProvider;
 import com.gateway.util.jwt.JwtUtil;
 import com.util.response.Resp;
-import com.util.response.ResultCode;
 import io.jsonwebtoken.Claims;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +20,6 @@ import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import javax.annotation.Resource;
 import java.nio.charset.StandardCharsets;
 
 /**
@@ -78,7 +75,7 @@ public class AuthTokenFilter implements GlobalFilter, Ordered {
         resp.getHeaders().add("Content-Type", "application/json;charset=UTF-8");
         String result = "";
         try {
-            result = objectMapper.writeValueAsString(Resp.error(ResultCode.DefaultResultCode.NO_PERMISSIONS_EXCEPTION));
+            result = objectMapper.writeValueAsString(Resp.error(msg));
         } catch (JsonProcessingException e) {
             log.error(e.getMessage(), e);
         }
