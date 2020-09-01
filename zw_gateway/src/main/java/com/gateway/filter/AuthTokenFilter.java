@@ -33,9 +33,6 @@ import java.nio.charset.StandardCharsets;
 @AllArgsConstructor
 public class AuthTokenFilter implements GlobalFilter, Ordered {
 
-    @Resource
-    private UserFeign userFeign;
-
     private ObjectMapper objectMapper;
 
     @Override
@@ -81,7 +78,7 @@ public class AuthTokenFilter implements GlobalFilter, Ordered {
         resp.getHeaders().add("Content-Type", "application/json;charset=UTF-8");
         String result = "";
         try {
-            result = objectMapper.writeValueAsString(Resp.error(ResultCode.DefaultResultCode.NO_PERMISSIONS_EXCEPTION,"没有权限"));
+            result = objectMapper.writeValueAsString(Resp.error(ResultCode.DefaultResultCode.NO_PERMISSIONS_EXCEPTION));
         } catch (JsonProcessingException e) {
             log.error(e.getMessage(), e);
         }

@@ -26,13 +26,13 @@ public class Resp<T> {
      * 反馈信息
      */
     @ApiModelProperty(value = "反馈信息", example = "操作成功！")
-    private String errmsg;
+    private String msg;
 
     /**
      * 响应码
      */
     @ApiModelProperty(value = "请求响应代码,0代表成功", example = "0")
-    private int errno;
+    private int code;
 
     /**
      * 反馈数据
@@ -46,28 +46,28 @@ public class Resp<T> {
     public Resp() {
         this.success = true;
         this.resultCode = ResultCode.DefaultResultCode.DEFAULT_SUCCESS;
-        this.errmsg = "操作成功";
-        this.errno = resultCode.getCode();
+        this.msg = "操作成功";
+        this.code = resultCode.getCode();
     }
 
-    public Resp(boolean success, ResultCode resulterrno) {
+    public Resp(boolean success, ResultCode resultcode) {
         this.success = success;
-        this.resultCode = resulterrno;
-        this.errno = resulterrno.getCode();
+        this.resultCode = resultcode;
+        this.code = resultcode.getCode();
     }
 
-    public Resp(boolean success, String errmsg, ResultCode resultCode) {
+    public Resp(boolean success, String msg, ResultCode resultCode) {
         this.success = success;
-        this.errmsg = errmsg;
+        this.msg = msg;
         this.resultCode = resultCode;
-        this.errno = resultCode.getCode();
+        this.code = resultCode.getCode();
     }
 
     public Resp(T result) {
         this.success = true;
         this.resultCode = ResultCode.DefaultResultCode.DEFAULT_SUCCESS;
-        this.errno = resultCode.getCode();
-        this.errmsg = "操作成功";
+        this.code = resultCode.getCode();
+        this.msg = "操作成功";
         this.result = result;
     }
 
@@ -83,15 +83,15 @@ public class Resp<T> {
         return new Resp(false, ResultCode.DefaultResultCode.DEFAULT_FAILED);
     }
 
-    public static Resp error(ResultCode resulterrno) {
-        return new Resp(false, resulterrno);
+    public static Resp error(ResultCode resultcode) {
+        return new Resp(false, resultcode);
     }
 
-    public static Resp error(String errmsg) {
-        return new Resp(false, errmsg, ResultCode.DefaultResultCode.DEFAULT_FAILED);
+    public static Resp error(String msg) {
+        return new Resp(false, msg, ResultCode.DefaultResultCode.DEFAULT_FAILED);
     }
 
-    public static Resp error(ResultCode resulterrno, String errmsg) {
-        return new Resp(false, errmsg, resulterrno);
+    public static Resp error(ResultCode resultcode, String msg) {
+        return new Resp(false, msg, resultcode);
     }
 }

@@ -19,6 +19,7 @@
 
     <properties>
         <swagger.version>2.9.2</swagger.version>
+        <swagger.bootstrap.ui.version>1.9.6</swagger.bootstrap.ui.version>
     </properties>
 
     <dependencyManagement>
@@ -40,7 +41,7 @@
             <artifactId>lombok</artifactId>
             <version>1.16.20</version>
         </dependency>
-        <!-- swagger 文档 -->
+        <!--swagger 接口文档-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
@@ -50,6 +51,11 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>${swagger.bootstrap.ui.version}</version>
         </dependency>
     </dependencies>
 
