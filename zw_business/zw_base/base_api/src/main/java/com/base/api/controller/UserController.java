@@ -1,14 +1,20 @@
 package com.base.api.controller;
 
+import com.base.api.service.UserService;
 import com.base.common.json.JsonUtil;
 import com.base.feign.user.UserFeign;
 import com.util.response.Resp;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+
 @RestController
 @RequestMapping("/userClient")
-public class UserController implements UserFeign {
+public class UserController  {
+
+    @Resource
+    private UserService userService;
 
     @RequestMapping(value = "/user/test")
     public String test() {
@@ -16,8 +22,8 @@ public class UserController implements UserFeign {
         return "";
     }
 
-    @Override
+    @RequestMapping(value = "/user/getUser")
     public String getUser() {
-        return "用户";
+        return userService.getUser();
     }
 }
