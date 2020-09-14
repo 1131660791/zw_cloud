@@ -2,7 +2,7 @@ package com.gateway.util.constant;
 
 public interface TokenConstant {
 
-    String HEADER = "token";
+    String HEADER = "Authorization";
     String AVATAR = "avatar";
     String BEARER = "bearer";
     String SIGN_KEY = "Blade";

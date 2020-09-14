@@ -21,7 +21,7 @@ public interface ResultCode {
         /**
          * 失败
          */
-        DEFAULT_FAILED(1),
+        DEFAULT_FAILED(-1),
 
         /**
          * 登录已过期
