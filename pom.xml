@@ -27,6 +27,7 @@
         <module>zw_gateway</module>
         <module>zw_commons</module>
         <module>zw_business</module>
+        <module>zw_commons/commons_mongo</module>
     </modules>
 
     <parent> <!-- 引入springboot 启动类 -->

@@ -14,6 +14,7 @@
 
     <modules>
         <module>commons_redis</module>
+        <module>commons_mongo</module>
         <module>commons_ribbitmq</module>
         <module>commons_elasticsearch</module>
         <module>commons_util</module>
@@ -40,6 +41,11 @@
             <dependency> <!-- elasticsearch -->
                 <groupId>com.zw</groupId>
                 <artifactId>commons_elasticsearch</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zw</groupId>
+                <artifactId>commons_mongo</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
