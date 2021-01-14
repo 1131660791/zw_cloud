@@ -13,7 +13,7 @@
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
     <modules>
-        <module>consumer_api</module>
+        <module>consumer_code</module>
         <module>consumer_common</module>
         <module>consumer_feign</module>
     </modules>
@@ -22,7 +22,7 @@
         <dependencies>
             <dependency>
                 <groupId>com.zw</groupId>
-                <artifactId>consumer_api</artifactId>
+                <artifactId>consumer_code</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

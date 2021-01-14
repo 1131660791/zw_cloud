@@ -13,7 +13,7 @@
     <name>${project.artifactId}</name>
 
     <modules>
-        <module>base_api</module>
+        <module>base_code</module>
         <module>base_common</module>
         <module>base_feign</module>
     </modules>
@@ -22,7 +22,7 @@
         <dependencies>
             <dependency>
                 <groupId>com.zw</groupId>
-                <artifactId>base_api</artifactId>
+                <artifactId>base_code</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

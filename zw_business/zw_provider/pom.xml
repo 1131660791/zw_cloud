@@ -12,7 +12,7 @@
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
     <modules>
-        <module>provider_api</module>
+        <module>provider_code</module>
         <module>provider_common</module>
         <module>provider_feign</module>
     </modules>

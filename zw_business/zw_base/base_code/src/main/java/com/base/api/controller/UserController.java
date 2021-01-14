@@ -2,8 +2,6 @@ package com.base.api.controller;
 
 import com.base.api.service.UserService;
 import com.base.common.json.JsonUtil;
-import com.base.feign.user.UserFeign;
-import com.util.response.Resp;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

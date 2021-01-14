@@ -14,9 +14,6 @@
 
     <modules>
         <module>commons_redis</module>
-        <module>commons_mongo</module>
-        <module>commons_ribbitmq</module>
-        <module>commons_elasticsearch</module>
         <module>commons_util</module>
         <module>commons_generator</module>
     </modules>

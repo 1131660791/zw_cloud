@@ -23,7 +23,7 @@ public class CodeGenerator {
         GlobalConfig gc = new GlobalConfig();
         //  String projectPath = System.getProperty("user.dir");
         // 配置路径
-        String projectPath = "E:\\JAVA\\ideaSpase\\zw_cloud\\zw_business\\zw_consumer\\consumer_api";
+        String projectPath = "E:\\JAVA\\ideaSpase\\zw_cloud\\zw_business\\zw_consumer\\consumer_code";
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setFileOverride(true);
         gc.setActiveRecord(true);
