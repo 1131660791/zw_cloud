@@ -11,6 +11,7 @@ public class AuthProvider {
     private static List<String> defaultSkipUrl = new ArrayList<>();
 
     static {
+        defaultSkipUrl.add("/login/**");
         defaultSkipUrl.add("/example");
         defaultSkipUrl.add("/token/**");
         defaultSkipUrl.add("/captcha/**");

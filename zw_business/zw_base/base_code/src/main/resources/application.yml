@@ -4,7 +4,7 @@ server:
     context-path: /base
 spring:
   application:
-    name: base
+    name: @project.name@
 
   cloud:
     # Spring Cloud Config 访问方式

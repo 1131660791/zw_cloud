@@ -59,5 +59,36 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>DEV</id>
+            <properties>
+                <env>DEV</env>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
 
+        <profile>
+            <id>FAT</id>
+            <properties>
+                <env>FAT</env>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>UAT</id>
+            <properties>
+                <env>UAT</env>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>PRO</id>
+            <properties>
+                <env>PRO</env>
+            </properties>
+        </profile>
+    </profiles>
 </project>

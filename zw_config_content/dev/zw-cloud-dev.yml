@@ -2,7 +2,7 @@ spring:
   # 数据库链接
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1/spring_cloud_database?useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=utf-8
     username: root
     password: root

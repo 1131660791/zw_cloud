@@ -1,5 +1,5 @@
 package com.util.euums;
 
-enum ResponseEnum {
+public enum ResponseEnum {
     Fss;
 }

@@ -4,7 +4,7 @@ server:
     context-path: /provider
 spring:
   application:
-    name: zw-provider
+    name: @project.name@
   cloud:
     # config
     config:
