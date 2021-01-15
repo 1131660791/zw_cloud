@@ -1,5 +1,6 @@
 package com.base.api.controller;
 
+import com.base.api.service.SysUserService;
 import com.base.api.service.UserService;
 import com.base.common.json.JsonUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
