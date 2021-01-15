@@ -1,4 +1,4 @@
-package com.gateway.util.constant;
+package com.util.constant.auth;
 
 public interface TokenConstant {
 

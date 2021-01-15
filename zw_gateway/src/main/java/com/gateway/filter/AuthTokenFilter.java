@@ -3,7 +3,7 @@ package com.gateway.filter;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gateway.util.constant.AuthProvider;
-import com.gateway.util.jwt.JwtUtil;
+import com.util.jwt.JwtUtil;
 import com.util.response.Resp;
 import io.jsonwebtoken.Claims;
 import lombok.AllArgsConstructor;
@@ -40,12 +40,10 @@ public class AuthTokenFilter implements GlobalFilter, Ordered {
         }
         ServerHttpResponse resp = exchange.getResponse();
         String headerToken = exchange.getRequest().getHeaders().getFirst(AuthProvider.AUTH_KEY);
-        String paramToken = exchange.getRequest().getQueryParams().getFirst(AuthProvider.AUTH_KEY);
-        if (StringUtils.isAllBlank(headerToken, paramToken)) {
+        if (StringUtils.isAllBlank(headerToken)) {
             return unAuth(resp, "缺失令牌,鉴权失败");
         }
-        String auth = StringUtils.isBlank(headerToken) ? paramToken : headerToken;
-        String token = JwtUtil.getToken(auth);
+        String token = JwtUtil.getToken(headerToken);
         Claims claims = JwtUtil.parseJWT(token);
         if (claims == null) {
             return unAuth(resp, "请求未授权");
@@ -82,6 +80,7 @@ public class AuthTokenFilter implements GlobalFilter, Ordered {
         DataBuffer buffer = resp.bufferFactory().wrap(result.getBytes(StandardCharsets.UTF_8));
         return resp.writeWith(Flux.just(buffer));
     }
+
 
     @Override
     public int getOrder() {
