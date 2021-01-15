@@ -22,20 +22,6 @@
             <version>${project.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.zw</groupId>
-            <artifactId>base_common</artifactId>
-            <version>${project.version}</version>
-            <type>jar</type>
-        </dependency>
-
-        <dependency>
-            <groupId>com.zw</groupId>
-            <artifactId>base_feign</artifactId>
-            <version>${project.version}</version>
-            <type>jar</type>
-        </dependency>
-
         <!-- consul -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

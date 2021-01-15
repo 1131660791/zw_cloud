@@ -23,7 +23,7 @@ public class CodeGenerator {
         GlobalConfig gc = new GlobalConfig();
         //  String projectPath = System.getProperty("user.dir");
         // 配置路径
-        String projectPath = "E:\\JAVA\\ideaSpase\\zw_cloud\\zw_business\\zw_consumer\\consumer_code";
+        String projectPath = "D:\\javaSpace\\ideaSpace\\zw_cloud\\zw_business\\zw_base\\base_code";
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setFileOverride(true);
         gc.setActiveRecord(true);
@@ -48,14 +48,14 @@ public class CodeGenerator {
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUrl("jdbc:mysql://127.0.0.1:3306/spring_cloud_database?useSSL=false&useUnicode=true&serverTimezone=GMT%2B8&characterEncoding=utf-8");
         dsc.setUsername("root");
-        dsc.setPassword("mysql");
+        dsc.setPassword("root");
         mpg.setDataSource(dsc);
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.consumer.api");
+        pc.setParent("com.base.api");
         pc.setController("controller");
-        pc.setEntity("pojo");
+        pc.setEntity("model");
         // pc.setModuleName("test");
         mpg.setPackageInfo(pc);
 
@@ -85,7 +85,7 @@ public class CodeGenerator {
         // 表名生成策略 - 默认驼峰法
         strategy.setNaming(NamingStrategy.underline_to_camel);
         // 需要生成的表
-        strategy.setInclude(new String[]{"consumer"});
+        strategy.setInclude(new String[]{"sys_user"});
 
         // 排除生成的表
         //strategy.setExclude(new String[]{"test"});

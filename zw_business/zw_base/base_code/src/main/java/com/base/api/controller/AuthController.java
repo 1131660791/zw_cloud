@@ -1,7 +1,7 @@
 package com.base.api.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.base.api.model.SysUser;
+import com.base.common.model.SysUser;
 import com.base.api.service.SysUserService;
 import com.util.jwt.JwtUtil;
 import io.swagger.annotations.Api;

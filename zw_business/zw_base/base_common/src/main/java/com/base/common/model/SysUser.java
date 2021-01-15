@@ -1,4 +1,4 @@
-package com.base.api.model;
+package com.base.common.model;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;

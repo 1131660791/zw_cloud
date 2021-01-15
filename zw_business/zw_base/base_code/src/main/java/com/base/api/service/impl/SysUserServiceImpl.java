@@ -1,6 +1,6 @@
 package com.base.api.service.impl;
 
-import com.base.api.model.SysUser;
+import com.base.common.model.SysUser;
 import com.base.api.mapper.SysUserMapper;
 import com.base.api.service.SysUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

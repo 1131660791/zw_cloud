@@ -1,6 +1,6 @@
 package com.base.api.mapper;
 
-import com.base.api.model.SysUser;
+import com.base.common.model.SysUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Component;
 

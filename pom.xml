@@ -22,7 +22,6 @@
     </developers>
 
     <modules>
-        <module>zw_pom</module>
         <module>zw_config_server</module>
         <module>zw_gateway</module>
         <module>zw_commons</module>

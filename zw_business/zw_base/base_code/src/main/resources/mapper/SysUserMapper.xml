@@ -3,7 +3,7 @@
 <mapper namespace="com.base.api.mapper.SysUserMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.base.api.model.SysUser">
+    <resultMap id="BaseResultMap" type="com.base.common.model.SysUser">
         <id column="id" property="id"/>
         <result column="user_name" property="userName"/>
         <result column="account" property="account"/>

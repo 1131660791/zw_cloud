@@ -1,6 +1,6 @@
 package com.base.api.service;
 
-import com.base.api.model.SysUser;
+import com.base.common.model.SysUser;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

@@ -17,78 +17,11 @@
         <module>zw_base</module>
     </modules>
 
-    <properties>
-        <swagger.version>2.9.2</swagger.version>
-        <swagger.bootstrap.ui.version>1.9.6</swagger.bootstrap.ui.version>
-    </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.zw</groupId>
-                <artifactId>zw_pom</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
-        <!-- lombok  -->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.20</version>
-        </dependency>
-        <!--swagger 接口文档-->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${swagger.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>${swagger.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>swagger-bootstrap-ui</artifactId>
-            <version>${swagger.bootstrap.ui.version}</version>
+            <groupId>com.zw</groupId>
+            <artifactId>commons_bom</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
-
-    <profiles>
-        <profile>
-            <id>DEV</id>
-            <properties>
-                <env>DEV</env>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-
-        <profile>
-            <id>FAT</id>
-            <properties>
-                <env>FAT</env>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>UAT</id>
-            <properties>
-                <env>UAT</env>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>PRO</id>
-            <properties>
-                <env>PRO</env>
-            </properties>
-        </profile>
-    </profiles>
 </project>
