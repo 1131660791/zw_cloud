@@ -1,4 +1,4 @@
-package com.util.common;
+package com.util.common.stringutil;
 
 import lombok.extern.slf4j.Slf4j;
 import net.sourceforge.pinyin4j.PinyinHelper;
@@ -13,6 +13,7 @@ import java.util.stream.IntStream;
  */
 @Slf4j
 public class StringUtils extends org.apache.commons.lang3.StringUtils {
+
     private static final char UNDERLINE = '_';
 
     /**
@@ -20,7 +21,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * download_count => downloadCount
      *
      * @param str 需要转换的字符串
-     * @return 变成驼峰形式字符串
+     * @return 变成驼峰形式字符串DateUtil.java
      */
     public static String underlineToCamel(String str) {
         if (isEmpty(str)) {

@@ -1,4 +1,4 @@
-package com.util.collections.sort;
+package com.util.common.conllections.sort;
 
 import java.lang.reflect.Field;
 import java.text.NumberFormat;
@@ -8,7 +8,7 @@ import java.util.*;
  * List 字段排序
  */
 public class ListSortUtil {
-    
+
     /**
      * 对list的元素按照多个属性名称排序,
      * list元素的属性可以是数字（byte、short、int、long、float、double等，支持正数、负数、0）、char、String、java.util.Date
