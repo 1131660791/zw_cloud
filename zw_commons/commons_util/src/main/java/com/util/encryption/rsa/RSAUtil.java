@@ -19,6 +19,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
 import java.util.Properties;
+
 /**
  * 实现RSA加解密
  *
@@ -158,8 +159,6 @@ public class RSAUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
     /**
@@ -295,7 +294,6 @@ public class RSAUtil {
         return signature.sign();
     }
 
-
     /**
      * 将char转换为byte
      *
@@ -305,7 +303,6 @@ public class RSAUtil {
     private static byte toByte(char c) {
         return (byte) "0123456789ABCDEF".indexOf(c);
     }
-
 
     public static int getValidLength(byte[] bytes) {
         int i = 0;

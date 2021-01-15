@@ -27,7 +27,7 @@ public class JwtUtil {
     public static String BASE64_SECURITY = Base64.getEncoder().encodeToString(SIGN_KEY.getBytes(StandardCharsets.UTF_8));
 
     //密钥 -- 根据实际项目，这里可以做成配置
-    public static final String KEY = "022bdc63c3c5a45879ee6581508b9d03adfec4a4658c0ab3d722e50c91a351c42c231cf43bb8f86998202bd301ec52239a74fc0c9a9aeccce604743367c9646b";
+    public static final String KEY = "MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBANtQrgZDl17w4RvdN6VB3DBVuUZd8XVzUg8XqdK/z5If3wTJ36Re0Oji7Yqk3bDJx7a+8a0RmAN6YXhP+Ea/vZR6nQiNS3Cxp8sPY/Bci1+GmsJn2sBpPeCYLu3cJTPxuPlcgs+elYCortO52xSWB8Yb7kIV+LYipoiKVQrx6nUnAgMBAAECgYEAuZtGLDb33HmviY1mko1yc9WYv1yyBNxcDjnQl3ONj/U5ISxYARvdYbrrnfJ5TCz4wEhI8Fd7dzYTV2cWj4mmPnkPZ2XbpAqLeKJdHdVsIOhpCQA4WLKONa2KtdVacfmtf1H+OP+fPvZ1EckN+qNNixh5FAGwDv0m3RTdpxQg9UECQQD5YUNnrtM3WB/lv72d7CMCtB6uLJ4uvZTJH0qaZ4yGyN3TDbb8BNp0De6b+w7CqmQN+4DRqd6A41qeE5obp1ErAkEA4SMaKRsJfcjN6z+wF7/iut+BrMATL8xJUUsSNzdJnAzngx4f2GZ80svDfKAWuzcP+s1K33v/j36ZgTKnEkPV9QJBAPTh2NHgr9JB/Bicv3NrJToLa7E3aSGW0pro2lZi5nCYoJMWfaBel7Gs2Klc0DLCJTxBw06fUzoXh62ArC0JkT8CQApyV4dqwsD8bVmqJeCkPcAQGPNMIlfIcep8wkafoSHFk4SJBE9FSit52wNQZl2fi3VGy1+dYFlnNXZCRHBbh3UCQQCCJVXNCyX5hEKgYzYzoBAPqIVN45PACF2G0bwea0gyGWny+W0ia+QAj4uwDibSsxUyZExBfyKX+MPDegS9dHBo";
 
     /**
      * 用户登录成功后生成Jwt
