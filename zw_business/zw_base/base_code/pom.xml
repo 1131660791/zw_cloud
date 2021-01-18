@@ -23,6 +23,12 @@
             <groupId>com.zw</groupId>
             <artifactId>base_feign</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.zw</groupId>
+            <artifactId>consumer_feign</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

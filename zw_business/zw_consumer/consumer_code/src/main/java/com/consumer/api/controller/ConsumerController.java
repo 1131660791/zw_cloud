@@ -1,7 +1,9 @@
 package com.consumer.api.controller;
 
+import com.base.feign.user.UserFeign;
 import com.consumer.api.pojo.Consumer;
 import com.consumer.api.service.ConsumerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,8 +31,8 @@ public class ConsumerController {
     }
 
     @RequestMapping(value = "/ss")
-    public String ss(){
-       return consumerService.getss();
+    public String ss() {
+        return consumerService.getss();
     }
 
 }

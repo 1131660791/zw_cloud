@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 @Service("userService")
 public class UserServiceImpl implements UserFeign, UserService {
 
+
+
     @Override
     public String getUser() {
         return "用户";
