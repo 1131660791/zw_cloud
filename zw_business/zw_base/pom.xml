@@ -52,12 +52,6 @@
             <version>${server.version}</version>
         </dependency>
 
-        <!-- openfeign -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <version>${server.version}</version>
-        </dependency>
     </dependencies>
 
 </project>

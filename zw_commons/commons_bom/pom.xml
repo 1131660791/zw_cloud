@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>zw_cloud</artifactId>
+        <artifactId>zw_commons</artifactId>
         <groupId>com.zw</groupId>
         <version>1.0</version>
     </parent>
@@ -49,6 +49,13 @@
             <version>${server.version}</version>
         </dependency>
 
+        <!-- openfeign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>${server.version}</version>
+        </dependency>
+
         <!-- 熔断器 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -86,6 +93,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${server.version}</version>
         </dependency>
 
         <!-- 导入数据库连接 -->

@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>zw_commons</artifactId>
-
+    <name>${project.artifactId}</name>
 
     <modules>
         <module>commons_bom</module>
@@ -26,24 +26,9 @@
     <!-- 公共模块引入管理 -->
     <dependencyManagement>
         <dependencies>
-            <dependency> <!-- ribbitMq -->
-                <groupId>com.zw</groupId>
-                <artifactId>commons_ribbitmq</artifactId>
-                <version>${project.version}</version>
-            </dependency>
             <dependency> <!-- redis -->
                 <groupId>com.zw</groupId>
                 <artifactId>commons_redis</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency> <!-- elasticsearch -->
-                <groupId>com.zw</groupId>
-                <artifactId>commons_elasticsearch</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.zw</groupId>
-                <artifactId>commons_mongo</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
